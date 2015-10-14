@@ -13,6 +13,4 @@ public class Wecome extends LCActivitySupport {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_main);
 	}
-
-
 }
