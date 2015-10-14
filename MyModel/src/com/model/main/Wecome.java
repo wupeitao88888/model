@@ -1,11 +1,12 @@
 package com.model.main;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
-public class MainActivity extends Activity {
+import com.modelsdk.base.LCActivitySupport;
+
+public class Wecome extends LCActivitySupport {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
