@@ -95,7 +95,6 @@ public class LCActivitySupport extends FragmentActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     @Override
