@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/com/modelsdk/base/LCActivitySupport.java=UTF-8
+encoding//src/com/modelsdk/base/ActivitySupport.java=UTF-8
 encoding//src/com/modelsdk/view/DialogView.java=UTF-8
-encoding//src/com/modelsdk/view/LCTitleBar.java=UTF-8
-encoding/<project>=GBK
+encoding//src/com/modelsdk/view/PullFooterView.java=UTF-8
+encoding//src/com/modelsdk/view/TitleBar.java=UTF-8
+encoding/<project>=UTF-8
