@@ -43,7 +43,7 @@ import com.modelsdk.utils.LCSharedPreferencesHelper;
 import com.modelsdk.view.TitleBar;
 
 /**
- * Actity wpt
+ * Actity 基类
  *
  * @author wpt
  */
