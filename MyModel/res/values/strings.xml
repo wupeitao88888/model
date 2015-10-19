@@ -4,5 +4,7 @@
     <string name="app_name">My Model</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="original">原创动画\n每周更新</string>
+    <string name="interaction">互动播放\n记录成长</string>
+    <string name="team">混龄团队\n线下教学</string>
 </resources>
