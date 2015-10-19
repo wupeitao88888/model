@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.example.testbase.MainTab;
 import com.model.adapter.GuidanceOptionsAdapter;
 import com.modelsdk.base.ActivitySupport;
 import com.modelsdk.view.PullScrollView;
@@ -43,7 +44,7 @@ public class GuidanceOptions extends ActivitySupport implements
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				mIntent(context, MainTab.class);
 			}
 		});
 		initView();

@@ -454,7 +454,7 @@ public class ViewUtil {
 //				ToastUtil.showToast(context, AppConfig.TEXT_NULL);
 			}
 		} else {
-			ToastUtil.showToast(context, AppConfig.TEXTVIEW_NULL);
+			ToastUtil.showShort(context, AppConfig.TEXTVIEW_NULL);
 		}
 	}
 

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-     <drawable name="tiled">#4ED4F4</drawable>
-     <drawable name="white_title">#FFFFFF</drawable>
+
+    <drawable name="tiled">#4ED4F4</drawable>
+    <drawable name="white_title">#FFFFFF</drawable>
+
+    <color name="lightyellow">#FFFFE0</color>
+    <color name="white">#FFFFFF</color>
+    <!-- 桃色 -->
+    <color name="gold">#FFD700</color>
+    <color name="red">#FF0000</color>
+
 </resources>

@@ -50,7 +50,7 @@ public class ToastUtil {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 				case SHOW_TOAST:
-					showToast(mContext,msg.getData().getString("TEXT"));
+					showShort(mContext,msg.getData().getString("TEXT"));
 					break;
 				default:
 					break;
@@ -58,26 +58,7 @@ public class ToastUtil {
 		}
 	};
     
-    /**
-     * 描述：Toast提示文本.
-     * @param text  文本
-     */
-	public static void showToast(Context context,String text) {
-		mContext = context;
-		if(!StrUtil.isEmpty(text)){
-			Toast.makeText(context,text, Toast.LENGTH_SHORT).show();
-		}
-		
-	}
-	
-	/**
-     * 描述：Toast提示文本.
-     * @param resId  文本的资源ID
-     */
-	public static void showToast(Context context,int resId) {
-		mContext = context;
-		Toast.makeText(context,""+context.getResources().getText(resId), Toast.LENGTH_SHORT).show();
-	}
+  
     
     /**
 	 * 描述：在线程中提示文本信息.
@@ -104,6 +85,117 @@ public class ToastUtil {
 		msg.setData(bundle);
 		baseHandler.sendMessage(msg);
 	}
-    
+	
+	
+	/****以下是避免出现重复的吐司**/
+	
+	
+	
+	private static Toast toast;
+
+	/**
+	 * 短时间显示Toast
+	 * 
+	 * @param context
+	 * @param message
+	 */
+	public static void showShort(Context context, CharSequence message) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/**
+	 * 短时间显示Toast
+	 * 
+	 * @param context
+	 * @param message
+	 */
+	public static void showShort(Context context, int message) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/**
+	 * 长时间显示Toast
+	 * 
+	 * @param context
+	 * @param message
+	 */
+	public static void showLong(Context context, CharSequence message) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/**
+	 * 长时间显示Toast
+	 * 
+	 * @param context
+	 * @param message
+	 */
+	public static void showLong(Context context, int message) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/**
+	 * 自定义显示Toast时间
+	 * 
+	 * @param context
+	 * @param message
+	 * @param duration
+	 */
+	public static void show(Context context, CharSequence message, int duration) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, duration);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/**
+	 * 自定义显示Toast时间
+	 * 
+	 * @param context
+	 * @param message
+	 * @param duration
+	 */
+	public static void show(Context context, int message, int duration) {
+		if (null == toast) {
+			toast = Toast.makeText(context, message, duration);
+			// toast.setGravity(Gravity.CENTER, 0, 0);
+		} else {
+			toast.setText(message);
+		}
+		toast.show();
+	}
+
+	/** Hide the toast, if any. */
+	public static void hideToast() {
+		if (null != toast) {
+			toast.cancel();
+		}
+	}
 
 }
