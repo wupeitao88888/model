@@ -45,6 +45,7 @@ public class GuidanceOptions extends ActivitySupport implements
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				mIntent(context, MainTab.class);
+				finish();
 			}
 		});
 		initView();
@@ -67,6 +68,9 @@ public class GuidanceOptions extends ActivitySupport implements
 		list.add("viewpage侧滑引导页");
 		list.add("仿人人引导页");
 		list.add("仿赶集引导页");
+		list.add("仿墨迹天气引导页");
+		list.add("Uber的欢迎界面");
+		list.add("SCViewPager欢迎页面");
 		guidanceOptionsAdapter = new GuidanceOptionsAdapter(list, context);
 		guidanceoptions_listview.setAdapter(guidanceOptionsAdapter);
 		guidanceoptions_listview
@@ -95,6 +99,15 @@ public class GuidanceOptions extends ActivitySupport implements
 			break;
 		case 3:
 			mIntent(context, ObservableScrollViewDemo.class);
+			break;
+		case 4:
+			mIntent(context, GuideMoJi.class);
+			break;
+		case 5:
+			mIntent(context, GuideVideoView.class);
+			break;
+		case 6:
+			mIntent(context, GulideSCViewpager.class);
 			break;
 		}
 	}

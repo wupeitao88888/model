@@ -57,8 +57,27 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
+            <!-- 仿墨迹天气引导页-->
+         <activity
+            android:name="com.model.main.GuideMoJi"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <!-- 仿tabhost引导页-->
         <activity
             android:name="com.example.testbase.MainTab"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <!-- Uber的欢迎界面-->
+        <activity
+            android:name="com.model.main.GuideVideoView"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <!-- SCViewPager 欢迎页面-->
+        <activity
+            android:name="com.model.main.GulideSCViewpager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
