@@ -16,6 +16,7 @@ import com.example.testbase.MainTab;
 import com.model.adapter.GuidanceOptionsAdapter;
 import com.modelsdk.base.ActivitySupport;
 import com.modelsdk.view.PullScrollView;
+import com.modelsdk.zxing.MipcaActivityCapture;
 
 
 /***
@@ -71,6 +72,7 @@ public class GuidanceOptions extends ActivitySupport implements
 		list.add("仿墨迹天气引导页");
 		list.add("Uber的欢迎界面");
 		list.add("SCViewPager欢迎页面");
+		list.add("扫一扫");
 		guidanceOptionsAdapter = new GuidanceOptionsAdapter(list, context);
 		guidanceoptions_listview.setAdapter(guidanceOptionsAdapter);
 		guidanceoptions_listview
@@ -108,6 +110,9 @@ public class GuidanceOptions extends ActivitySupport implements
 			break;
 		case 6:
 			mIntent(context, GulideSCViewpager.class);
+			break;
+		case 7:
+			mIntent(context, MipcaActivityCapture.class);
 			break;
 		}
 	}
