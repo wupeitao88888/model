@@ -3,7 +3,11 @@ package com.modelsdk.zxing;
 import java.io.IOException;
 import java.util.Vector;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -16,11 +20,16 @@ import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.modelsdk.mian.R;
+import com.modelsdk.view.DialogView;
 import com.modelsdk.zxing.camera.CameraManager;
 import com.modelsdk.zxing.decoding.CaptureActivityHandler;
 import com.modelsdk.zxing.decoding.InactivityTimer;
@@ -31,7 +40,7 @@ import com.modelsdk.zxing.view.ViewfinderView;
  * 
  * @author Ryan.Tang
  */
-public class MipcaActivityCapture extends Activity implements Callback{
+public class MipcaActivityCapture extends Activity implements Callback {
 
 	private CaptureActivityHandler handler;
 	private ViewfinderView viewfinderView;
@@ -45,6 +54,7 @@ public class MipcaActivityCapture extends Activity implements Callback{
 	public static String RESULT = "result";
 	public static String SCAN_RESULT = "scanresult";
 	private boolean vibrate;
+	private Dialog mProDialog;
 	private String resultString;
 
 	/** Called when the activity is first created. */
@@ -113,8 +123,7 @@ public class MipcaActivityCapture extends Activity implements Callback{
 			Toast.makeText(MipcaActivityCapture.this, "Scan failed!",
 					Toast.LENGTH_SHORT).show();
 		} else {
-			Toast.makeText(MipcaActivityCapture.this, "扫描成功"+resultString,
-					Toast.LENGTH_SHORT).show();
+			scanFinshDialog(resultString);
 
 		}
 	}
@@ -212,6 +221,37 @@ public class MipcaActivityCapture extends Activity implements Callback{
 			mediaPlayer.seekTo(0);
 		}
 	};
+
+	/**
+	 * 用提示框确认登录
+	 * 
+	 * @param resultString
+	 */
+	private void scanFinshDialog(String resultString) {
+		if ("".equals(resultString)) {
+			resultString = "您的账号将在电脑上登录,确定继续吗?";
+		}
+		final DialogView dv = new DialogView(MipcaActivityCapture.this,
+				R.style.DialogTheme, "提示", resultString);
+		dv.show();
+		dv.setPositiveOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				MipcaActivityCapture.this.finish();
+			}
+		});
+		dv.setCancleOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				dv.dismiss();
+			}
+		});
+	}
 
 	private void scanResult(Boolean result) {
 		Intent resultIntent = new Intent(this, ScanResultActivity.class);

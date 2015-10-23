@@ -54,9 +54,6 @@ public class ScanResultActivity extends Activity {
 		initview();
 		Intent intent = getIntent();
 		// String username = intent.getStringExtra("");
-		result = intent.getBooleanExtra(MipcaActivityCapture.RESULT, false);
-		scantipmessage = intent
-				.getStringExtra(MipcaActivityCapture.SCAN_RESULT);
 		// user_name.setText(username);
 		// if(scantipmessage.indexOf("bg://")>=0){
 		if (result) {

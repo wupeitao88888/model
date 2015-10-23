@@ -54,7 +54,7 @@ final class DecodeHandler extends Handler {
     	if (id == ResourcesUtil.getId(activity, "decode")) {
     		// Log.d(TAG, "Got decode message");
     		decode((byte[]) message.obj, message.arg1, message.arg2);
-		}else if (id == ResourcesUtil.getId(activity, "quit")) {
+		} else if (id == ResourcesUtil.getId(activity, "quit")) {
 			Looper.myLooper().quit();
 		}
     }
