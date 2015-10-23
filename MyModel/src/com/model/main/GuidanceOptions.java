@@ -71,7 +71,6 @@ public class GuidanceOptions extends ActivitySupport implements
 		list.add("仿赶集引导页");
 		list.add("仿墨迹天气引导页");
 		list.add("Uber的欢迎界面");
-		list.add("SCViewPager欢迎页面");
 		list.add("扫一扫");
 		guidanceOptionsAdapter = new GuidanceOptionsAdapter(list, context);
 		guidanceoptions_listview.setAdapter(guidanceOptionsAdapter);
@@ -109,9 +108,6 @@ public class GuidanceOptions extends ActivitySupport implements
 			mIntent(context, GuideVideoView.class);
 			break;
 		case 6:
-			mIntent(context, GulideSCViewpager.class);
-			break;
-		case 7:
 			mIntent(context, MipcaActivityCapture.class);
 			break;
 		}
