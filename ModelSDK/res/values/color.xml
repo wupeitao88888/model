@@ -7,5 +7,15 @@
     <color name="black">#000000</color>
 
     <drawable name="shallow">#40FFFFFF</drawable>
+    
+    <!-- start zxing -->
+    <color name="viewfinder_frame">#2477ab</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="viewfinder">#b0303537</color>
+    <color name="viewfinder_result">#22292c</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="scan_line_bg">#666666</color>
+    <!-- end zxing -->
 
 </resources>
